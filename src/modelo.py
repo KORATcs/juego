@@ -10,32 +10,42 @@ class Personaje:
 
     def atacar (self, Personaje):
         #funcion que permite que un Personaje haga daño a otro Personaje
-        if Personaje.estado == True:
+        if self.estado() == True:
+            #si el personaje que va a atacar esta con vida, ataca a su oponente y suma 1 mana 
+            #el mana es una energia que va aumentando de a 1 por cada ataque, si junta 3 obligatoriamente
+            #debe utilizar su ataque especial
+
+            print(f"{self.nombre} ataca a {Personaje.nombre}")
+
             if self.mana < 3:
                 self.mana += 1
-                daño_total = self.daño-Personaje.defensa  
+                daño_total = self.daño - Personaje.defensa  
 
-                if daño_total <= 0:
-                    return "no ha recibido daño"
-                
-                return "f{self.personaje.nombre} ha recibido {daño_total} de daño"
+                if daño_total > 0:
+                    print(f"\n{Personaje.nombre} ah recibido {daño_total} puntos de daño")
+                else:
+                    #en caso de que el daño_total sea igual o menor a 0 entonces no se hace daño
+                    print(f"{Personaje.nombre} no ha recibido daño") 
             else:
+                print(f"{self.nombre} ha realizado su ataque especial")
                 self.ataque_especial()
         else:
+            print(f"{self.nombre} no puede atacar desde la tumba")
             return False
 
     def ataque_especial (self):
-        #funcion que permite que un Personaje realice una accion especial (distinta por cada Personaje)
-        #esta funcion solo tendra la informacion necesaria dentro de cada clase de personaje especifico
+        #metodo que permite que un Personaje realice una accion especial (distinta por cada Personaje)
+        #este metodo solo tendra la informacion necesaria dentro de cada clase de personaje especifico
         pass
 
     def concentrar (self):
         #al concentrarse el personaje recibe 2 de mana al instante, lo que le permite mas pronto realizar un ataque especial
-        self.mana + 2
+        print(f"{self.nombre} concentró su energia y ganó 2 maná")
+        self.mana += 2
     
     def estado (self):
         #muestro si el personaje esta vivo o muerto
-        if Personaje.vida > 0:
+        if self.vida > 0:
             return True
         else:
             return False
@@ -43,17 +53,23 @@ class Personaje:
     def estadisticas (self):
         #muestra nombre, vida, daño y mana disponible del personaje que esta combatiendo.
         #en caso de estar muerto, se mostrara solo el nombre.
-        if Personaje.estado == True:
-            print("estadisticas")
-            return "Nombre = f{self.nombre}\n Vida = {self.vida}\n Daño = {self.daño}\n Mana = {self.mana}"
+        if self.estado() == True:
+            print(f"Nombre= {self.nombre}\nVida ={self.vida}\nDaño = {self.daño}\nMana = {self.mana}")
         else:
-            return "Nombre = f{self.nombre}\n --sin estadisticas--"
+            print(f"Nombre= {self.nombre}\n ¡MUERTO!") 
         
 class la_vigilante(Personaje):
-    #
+    #clase "la vigilante"
     def ataque_especial(self):
-        return super().ataque_especial()
+        if self.mana == 3:
+            #si su mana es igual a 3 entonces duplicara su daño
+            ataque_especial = self.daño * 2
+            print(f"{self.nombre} ha duplicado su ataque a {ataque_especial}")
+            return super().ataque_especial()
     
 class devorador_del_tiempo(Personaje):
     def ataque_especial(self):
-        return super().ataque_especial()
+        if self.mana == 3:
+            self.defensa += 10
+            print(f"{self.nombre} bloqueara el proximo golpe de su oponente")
+            return super().ataque_especial()

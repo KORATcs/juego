@@ -7,7 +7,14 @@ def main():
     guerrero = la_vigilante ("La Vigilante", 72, 9, 8)
     enemigo = devorador_del_tiempo ("Devorador del Tiempo", 100, 15, 0)
 
-    guerrero.estadisticas
+    enemigo.concentrar()
+    print("")
+    enemigo.atacar(guerrero)
+    print("")
+    enemigo.atacar(guerrero)
+    print("")
+    guerrero.atacar(enemigo)
+    
 
 if __name__ == "__main__":
     main()
