@@ -1,24 +1,43 @@
-# 🧙‍♂️ Sistema de Combate RPG en Python
 
-Este proyecto simula un sistema de combate entre personajes en un juego RPG. Utiliza programación orientada a objetos con herencia, métodos personalizados, y una lógica de batalla simple pero extendible.
+<img src="vigilante.jpg" alt="logo">
 
-## 📁 Estructura del Proyecto
+# 🧙‍♂️ Proyecto simulacion de combate  
+
+Bienvenido a mi proyecto **simulacion de combate** basado en el famoso juego RPG de cartas y mazmorras desarrollado por MegaCrit y publicado por Humble Bundle.
+Este proyecto lo estoy realizando en el curso Laboratorio Avanzado de Programacion de la carrera Desarrollo de Software de la UDC (Universidad del Chubut).
+
+---
+## 📁 Estructura del proyecto
 
 proyecto/ 
-│ ├── modelo.py # Contiene la lógica de las clases y personajes 
-├── main.py # Simula el combate entre personajes 
-└── README.md # Este archivo
+│ ├── modelo.py #Contiene la lógica de las clases y personajes 
+├── main.py #Simula el combate entre personajes 
+└── README.md #Este archivo
 
-## 🚀 Cómo Ejecutar
+## 📁 Requisitos
 
-1. Asegúrate de tener Python 3 instalado.
-2. Descarga o clona este proyecto.
-3. Ejecuta el archivo `main.py` desde la terminal:
+Antes de comenzar, asegúrate de tener instalados los siguientes requisitos:
 
-```bash
-python main.py
+- Python 3.8 o superior
+- Visual Studio Code o cualquier editor de codigo
+- pip (gestor de paquetes de Python)
 
-🧩 Clases y Funcionalidades
+---
+
+## 📁 Instalación
+
+Sigue estos pasos para instalar el proyecto:
+
+1. **Clona el repositorio:**
+
+   ```bash
+   git clone https://github.com/KORATcs/juego.git
+2. **Ejecuta el archivo main.py desde la terminal:**
+    ```bash
+    python main.py
+
+## Clases y Funcionalidades
+
 Personaje
 
 Clase base que contiene:
@@ -33,18 +52,9 @@ Clase base que contiene:
 
     estadisticas(): Muestra su nombre, vida, daño y maná.
 
-🧙‍♀️ Personajes
-la_vigilante (subclase de Personaje)
+## ⚔️ Mecanicas de la simulacion de combate
 
-    Ataque especial: Duplica su daño al alcanzar 3 de maná.
-
-devorador_del_tiempo (subclase de Personaje)
-
-    Ataque especial: Aumenta su defensa en 2 puntos al alcanzar 3 de maná.
-
-⚔️ Mecánica del Juego
-
-    Los personajes atacan si están vivos.
+  Los personajes atacan si están vivos.
 
     Cada ataque suma 1 de maná.
 
@@ -57,16 +67,16 @@ devorador_del_tiempo (subclase de Personaje)
 
     Si la vida llega a 0, el personaje se considera muerto y no puede seguir combatiendo.
 
-🧪 Ejemplo de Uso
+## 💡 Ejemplos de uso 
 
-from modelo import Personaje, la_vigilante, devorador_del_tiempo
+    from modelo import Personaje, la_vigilante, devorador_del_tiempo
 
-guerrero = la_vigilante("La Vigilante", 20, 9, 8)
-enemigo = devorador_del_tiempo("Devorador del Tiempo", 50, 15, 0)
+    guerrero = la_vigilante("La Vigilante", 20, 9, 8)
+    enemigo = devorador_del_tiempo("Devorador del Tiempo", 50, 15, 0)
 
-guerrero.atacar(enemigo)
+    guerrero.atacar(enemigo)
 
-💡 Mejoras Futuras
+## 💡 Mejoras futuras
 
     Más personajes con habilidades únicas.
 
@@ -74,4 +84,6 @@ guerrero.atacar(enemigo)
 
     Interfaz gráfica (GUI o consola interactiva).
 
-    Sistema de niveles y experiencia.
+    Sistema de niveles y experiencia.  
+
+
