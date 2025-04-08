@@ -3,7 +3,7 @@
 
 # 🧙‍♂️ Proyecto simulacion de combate  
 
-Bienvenido a mi proyecto **simulacion de combate** basado en el famoso juego RPG de cartas y mazmorras desarrollado por MegaCrit y publicado por Humble Bundle.
+Bienvenido a mi proyecto **simulacion de combate** basado en el famoso juego RPG de cartas y mazmorras: "Slay the Spire", desarrollado por MegaCrit y publicado por Humble Bundle.
 Este proyecto lo estoy realizando en el curso Laboratorio Avanzado de Programacion de la carrera Desarrollo de Software de la UDC (Universidad del Chubut).
 
 ---
@@ -69,10 +69,10 @@ Clase base que contiene:
 
 ## 💡 Ejemplos de uso 
 
-    from modelo import Personaje, la_vigilante, devorador_del_tiempo
+    from modelo import Personaje, La_vigilante, Devorador_del_tiempo
 
-    guerrero = la_vigilante("La Vigilante", 20, 9, 8)
-    enemigo = devorador_del_tiempo("Devorador del Tiempo", 50, 15, 0)
+    guerrero = La_vigilante("La Vigilante", 20, 9, 8)
+    enemigo = Devorador_del_tiempo("Devorador del Tiempo", 50, 15, 0)
 
     guerrero.atacar(enemigo)
 
