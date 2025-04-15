@@ -1,10 +1,11 @@
-from modelo import Personaje
+from src.modelo import Personaje
 
 class La_Silenciosa(Personaje):
     
     def ataque_especial(self, Personaje):
-        self.__daño += 1
-        print(f"{self._nombre} aumento su daño en 1\n")
+        #aumenta su daño en 1(es acumulativo) y reinicia su mana luego de activar su ataque especial
+        self.daño += 1
+        print(f"{self.nombre} aumento su daño en 1\n")
 
-        self.__mana = 0
+        self.mana = 0
         return super().ataque_especial()
